@@ -1,0 +1,100 @@
+#include<stdio.h>
+#include<conio.h>
+void prime();
+void plidrom(int);
+int reverse();
+int even(int);
+int menu();
+
+void main()
+{
+  int ch,yn,a,rev;
+  clrscr ();
+  do
+  {
+    ch=menu();
+    switch (ch)
+    {
+      case 1:
+	     prime();
+	     break;
+      case 2:
+	     printf ("Enter any number:");
+	     scanf ("%d", &a);
+	     plidrom();
+      case 3:
+	     rev=reverse();
+	     printf ("Reverse number is %d", rev);
+      case 4:
+
+      case 5:exit();
+	    break;
+	    default:
+		printf ("INVALID");
+    }
+      printf ("\nDo oyu want to continue?(Yes=y/Y or No=N/n)");
+      flushall();
+      scanf ("%c", &yn);
+  }
+  while (yn=='y' || yn=='Y');
+  getch ();
+}
+int menu()
+{
+  int choise;
+  printf ("\n\t\tmeun");
+  printf ("\n--------------------------------------------------------------");
+  printf ("\n1.Prime Number\n2.Pelidrom Number\n3.Reverse Number\n4.Even Series\n6.exit");
+  printf ("\n--------------------------------------------------------------");
+  printf ("Enter your choise:");
+  scanf ("%d", &choise);
+  return choise;
+}
+
+void prime()
+{
+    int no,c=0,i=2;
+   clrscr ();
+   printf ("Enter Any Number:");
+   scanf ("%d", &no);
+   while (i<no)
+   {
+	if (no%i==0)
+	{
+	  c=1;
+	  break;
+	}
+	  i=i+1;
+   }
+     if (c==1)
+	printf ("Not A Prime Number:%d", no);
+
+     else
+       printf ("Prime Number:%d", no);
+}
+
+void plidrom(int n)
+{
+   int n,p,a,sum=0;
+    p=n;
+    while (p!=0)
+    {
+	a=p%10;
+	sum=sum*10+a;
+	p=p/10;
+    }
+    if (sum==n)
+	printf ("Yes! It is a Pelidrome Number:%d", sum);
+    else
+	printf ("No! It is not a Pelideomr number:%d", sum);
+}
+
+int reverse()
+{
+  return
+}
+
+int even(int)
+{
+ return
+}
